@@ -1,6 +1,6 @@
 ---
-mode: agent
-description: Generate an automation spec from a requirement file
+name: generate-spec
+description: Generate an automation spec from a requirement file.
 ---
 
 # Generate Spec
@@ -10,7 +10,7 @@ Generate an automation spec from the requirement file:
 
 ## Instructions
 
-1. Read the requirement file: `.github/requirements/${input:featureName}.md`
+1. Read the requirement file: `.github/requirements/${input:featureName}.md`.
 
 2. Extract from the requirement:
    - Domain (e.g., auth, users, products)
@@ -31,6 +31,6 @@ Generate an automation spec from the requirement file:
      - Expected HTTP status code
      - Expected response assertions
 
-4. Confirm the spec file was created and display its path
+4. Confirm the spec file was created and display its path.
 
-5. Remind the user to review and change status to `APPROVED` before implementation
+5. Remind the user to review and change status to `APPROVED` before implementation.

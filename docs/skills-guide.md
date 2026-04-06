@@ -2,7 +2,7 @@
 
 ## What Are Skills?
 
-Skills are reusable, parameterized prompts stored as `.prompt.md` files in `.github/prompts/`. They represent the "commands" you use to interact with the ASDD system.
+Skills are reusable, parameterized capabilities stored as `SKILL.md` files inside `.github/skills/<name>/`. They represent the slash commands you use to interact with the ASDD system.
 
 In GitHub Copilot, skills are available as slash commands in the chat panel.
 
@@ -11,7 +11,7 @@ In GitHub Copilot, skills are available as slash commands in the chat panel.
 ## Available Skills
 
 ### `/asdd-orchestrate`
-**File:** `.github/prompts/asdd-orchestrate.prompt.md`  
+**File:** `.github/skills/asdd-orchestrate/SKILL.md`  
 **Purpose:** Run the full ASDD workflow for a feature from start to finish
 
 **When to use:** When starting a new feature from scratch, or to check the status of an existing one.
@@ -32,7 +32,7 @@ In GitHub Copilot, skills are available as slash commands in the chat panel.
 ---
 
 ### `/generate-spec`
-**File:** `.github/prompts/generate-spec.prompt.md`  
+**File:** `.github/skills/generate-spec/SKILL.md`  
 **Purpose:** Convert a requirement file into an automation spec
 
 **When to use:** When you have a requirement file and want to generate the spec without running the full orchestration.
@@ -48,7 +48,7 @@ In GitHub Copilot, skills are available as slash commands in the chat panel.
 ---
 
 ### `/implement-karate`
-**File:** `.github/prompts/implement-karate.prompt.md`  
+**File:** `.github/skills/implement-karate/SKILL.md`  
 **Purpose:** Implement Karate tests from an APPROVED spec
 
 **When to use:** When the spec is already approved and you're ready to generate the Karate code.
@@ -65,7 +65,7 @@ In GitHub Copilot, skills are available as slash commands in the chat panel.
 ---
 
 ### `/validate-spec-implementation`
-**File:** `.github/prompts/validate-spec-implementation.prompt.md`  
+**File:** `.github/skills/validate-spec-implementation/SKILL.md`  
 **Purpose:** Compare the spec against the Karate implementation to find gaps
 
 **When to use:** After implementation is complete, to verify quality and coverage.
@@ -84,16 +84,16 @@ In GitHub Copilot, skills are available as slash commands in the chat panel.
 
 To add a new skill:
 
-1. Create `.github/prompts/<skill-name>.prompt.md`
-2. Add the following frontmatter:
+1. Create a directory at `.github/skills/<skill-name>/`.
+2. Add a `SKILL.md` file with frontmatter:
    ```yaml
    ---
-   mode: agent
+   name: <skill-name>
    description: <One-line description>
    ---
    ```
-3. Write the instructions using `${input:<name>:<description>}` for parameters
-4. Reference the skill in the appropriate agent instruction files
+3. Write the instructions using `${input:<name>:<description>}` for parameters.
+4. Make the folder name, file name, and `name` frontmatter line up.
 
 ---
 
@@ -111,10 +111,10 @@ When the skill is invoked in Copilot, the user is prompted to provide the value.
 
 ## Skill vs Agent Interaction
 
-| | Skill (Prompt) | Agent (Instruction) |
+| | Skill (Skill File) | Agent (Instruction) |
 |--|---------------|---------------------|
-| **File location** | `.github/prompts/` | `.github/instructions/` |
-| **File format** | `*.prompt.md` | `*.instructions.md` |
+| **File location** | `.github/skills/<name>/` | `.github/agents/` or `.github/instructions/` |
+| **File format** | `SKILL.md` | `*.agent.md` or `*.instructions.md` |
 | **Invocation** | `/skill-name` | Referenced in context |
 | **Purpose** | Parameterized tasks | Behavioral guidelines |
 | **Reusability** | High (parameterized) | Contextual |

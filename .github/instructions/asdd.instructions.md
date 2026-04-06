@@ -52,5 +52,7 @@ Each requirement maps to:
 |------|---------|
 | `.github/requirements/_template.md` | Start here for new features |
 | `.github/specs/_template.spec.md` | Spec structure |
+| `.github/agents/` | Custom agent entrypoints |
+| `.github/skills/` | Slash-command skills |
 | `src/test/java/karate-config.js` | Environment config |
 | `src/test/resources/helpers/common.js` | Shared utilities |

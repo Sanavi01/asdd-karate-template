@@ -44,8 +44,9 @@ src/test/resources/helpers/           ← Shared JS helpers and reusable feature
 src/test/resources/schemas/<domain>/  ← JSON Schema validation files
 .github/requirements/                 ← Requirement markdown files
 .github/specs/                        ← Spec markdown files (DRAFT or APPROVED)
-.github/instructions/                 ← Agent instruction files
-.github/prompts/                      ← Skill prompt files
+.github/instructions/                 ← Shared workspace instruction files
+.github/agents/                       ← Custom agent definitions (.agent.md)
+.github/skills/                       ← Slash-command skills (SKILL.md folders)
 docs/                                 ← Documentation
 ```
 

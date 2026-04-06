@@ -11,7 +11,7 @@ This template gives you:
 - ✅ A **complete Karate project scaffold** ready to run
 - ✅ An **ASDD workflow** connecting requirements → specs → implementation
 - ✅ **4 AI agents** with defined roles and instructions
-- ✅ **4 skills (prompts)** for driving the workflow with Copilot
+- ✅ **4 skills** in `.github/skills/` for driving the workflow with Copilot
 - ✅ **Domain-based organization** for features, runners, data, and schemas
 - ✅ **Example tests** against a real public API
 - ✅ **Documentation** explaining every concept
@@ -57,17 +57,18 @@ asdd-karate-template/
 │
 ├── 📋 .github/
 │   ├── copilot-instructions.md          ← Main Copilot context (read first)
-│   ├── instructions/                    ← Agent behavior definitions
-│   │   ├── asdd.instructions.md         ← ASDD workflow rules
-│   │   ├── orchestrator.instructions.md ← @Orchestrator agent
-│   │   ├── spec-generator.instructions.md ← @SpecGenerator agent
-│   │   ├── karate-engineer.instructions.md ← @KarateEngineer agent
-│   │   └── reviewer.instructions.md    ← @Reviewer agent
-│   ├── prompts/                         ← Skills (slash commands)
-│   │   ├── asdd-orchestrate.prompt.md   ← Run full ASDD workflow
-│   │   ├── generate-spec.prompt.md      ← Generate spec from requirement
-│   │   ├── implement-karate.prompt.md   ← Implement Karate from spec
-│   │   └── validate-spec-implementation.prompt.md ← Validate implementation
+│   ├── instructions/                    ← Shared workspace instructions
+│   │   └── asdd.instructions.md         ← ASDD workflow rules
+│   ├── agents/                          ← Custom agent entrypoints
+│   │   ├── orchestrator.agent.md        ← @Orchestrator agent
+│   │   ├── spec-generator.agent.md      ← @SpecGenerator agent
+│   │   ├── karate-engineer.agent.md     ← @KarateEngineer agent
+│   │   └── reviewer.agent.md            ← @Reviewer agent
+│   ├── skills/                          ← Slash-command skills
+│   │   ├── asdd-orchestrate/SKILL.md    ← Run full ASDD workflow
+│   │   ├── generate-spec/SKILL.md       ← Generate spec from requirement
+│   │   ├── implement-karate/SKILL.md    ← Implement Karate from spec
+│   │   └── validate-spec-implementation/SKILL.md ← Validate implementation
 │   ├── requirements/                    ← Feature requirements (your input)
 │   │   ├── _template.md                 ← Requirement template
 │   │   └── example-users-crud.md        ← Example requirement
@@ -200,7 +201,7 @@ status: APPROVED
 
 ## AI Agents
 
-This template includes 4 AI agents configured via `.github/instructions/`:
+This template includes 4 AI agents configured via `.github/agents/`:
 
 ### 🎯 @Orchestrator
 Coordinates the full workflow. Tell it to "start ASDD for my-feature" and it handles the rest.
@@ -347,7 +348,7 @@ Feature: Domain - Description
 |-----|-------------|
 | [docs/asdd-workflow.md](docs/asdd-workflow.md) | Full ASDD workflow with diagrams |
 | [docs/agent-interaction.md](docs/agent-interaction.md) | How the 4 agents interact |
-| [docs/skills-guide.md](docs/skills-guide.md) | How to use skills/prompts |
+| [docs/skills-guide.md](docs/skills-guide.md) | How to use skills |
 | [docs/karate-conventions.md](docs/karate-conventions.md) | Naming, tags, structure |
 | [.github/copilot-instructions.md](.github/copilot-instructions.md) | Main Copilot context |
 

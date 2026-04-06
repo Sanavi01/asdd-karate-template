@@ -13,8 +13,7 @@
     <description>Reusable Karate API testing template with ASDD workflow</description>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <karate.version>1.5.2</karate.version>
         <junit5.version>5.10.2</junit5.version>

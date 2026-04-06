@@ -9,7 +9,7 @@ This template uses four AI agents that work together in a defined sequence. Each
 ## Agents
 
 ### 🎯 @Orchestrator
-**File:** `.github/instructions/orchestrator.instructions.md`
+**File:** `.github/agents/orchestrator.agent.md`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -36,7 +36,7 @@ Feature exists? → Call @Reviewer
 ---
 
 ### 📝 @SpecGenerator
-**File:** `.github/instructions/spec-generator.instructions.md`
+**File:** `.github/agents/spec-generator.agent.md`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -61,7 +61,7 @@ Feature exists? → Call @Reviewer
 ---
 
 ### ⚙️ @KarateEngineer
-**File:** `.github/instructions/karate-engineer.instructions.md`
+**File:** `.github/agents/karate-engineer.agent.md`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -87,7 +87,7 @@ src/test/resources/schemas/<domain>/<name>.schema.json
 ---
 
 ### 🔍 @Reviewer
-**File:** `.github/instructions/reviewer.instructions.md`
+**File:** `.github/agents/reviewer.agent.md`
 
 | Attribute | Detail |
 |-----------|--------|
@@ -147,7 +147,7 @@ User
 
 ## Using Agents in GitHub Copilot Chat
 
-All agents are configured via `.github/instructions/` files with `applyTo` metadata. GitHub Copilot automatically respects these instructions when working on matching file paths.
+All agents are configured via `.github/agents/` files. Shared rules still live in `.github/instructions/`, but the agent entrypoints themselves are now canonical `.agent.md` files.
 
 To invoke a specific agent role, address it by name in chat:
 ```
