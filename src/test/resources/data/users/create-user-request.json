@@ -1,0 +1,19 @@
+{
+  "name": "Karate Test User",
+  "email": "testuser@karate.test",
+  "password": "Test@1234",
+  "title": "Mr",
+  "birth_date": "15",
+  "birth_month": "6",
+  "birth_year": "1990",
+  "firstname": "Karate",
+  "lastname": "Tester",
+  "company": "ASDD Labs",
+  "address1": "123 Test Street",
+  "address2": "Suite 100",
+  "country": "United States",
+  "zipcode": "10001",
+  "state": "New York",
+  "city": "New York",
+  "mobile_number": "5551234567"
+}
